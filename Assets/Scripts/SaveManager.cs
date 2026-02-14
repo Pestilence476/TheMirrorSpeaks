@@ -17,29 +17,29 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public void SaveCoinForLevel(int coins, int level)
+    public void SavePointsForLevel(int points, int level)
     {
-        int currentCoinsInLevel = PlayerPrefs.GetInt("level" + level + "coins");
+        int currentPointsInLevel = PlayerPrefs.GetInt("level" + level + "points");
 
-        if (coins > currentCoinsInLevel)
+        if (points > currentPointsInLevel)
         {
-            PlayerPrefs.SetInt("level" + level + "coins", coins);
+            PlayerPrefs.SetInt("level" + level + "points", points);
         }
     }
 
-    public int LoadCoinForLevel(int level)
+    public int LoadPointsForLevel(int level)
     {
-        int totalCoinsForLevel = 0;
+        int totalPointsForLevel = 0;
 
         for (int i = 1; i < level; i++)
         {
-            if (PlayerPrefs.HasKey("level" + i + "coins"))
+            if (PlayerPrefs.HasKey("level" + i + "points"))
             {
-                totalCoinsForLevel += PlayerPrefs.GetInt("level" + i + "coins");
+                totalPointsForLevel += PlayerPrefs.GetInt("level" + i + "points");
             }
         }
 
-        return totalCoinsForLevel;
+        return totalPointsForLevel;
     }
 
     public void ResetData()

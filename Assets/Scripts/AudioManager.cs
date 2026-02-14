@@ -20,26 +20,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip uiPopup;
     [SerializeField] AudioClip uiToken;
     [SerializeField] AudioClip uiBigAccept;
-    [SerializeField] AudioClip cardHover;
-    [SerializeField] AudioClip cardDrag;
-    [SerializeField] AudioClip cardDefensePlay;
-    [SerializeField] AudioClip cardAbilityPlay;
-    [SerializeField] AudioClip cardAttackPlay;
-    [SerializeField] AudioClip passTurn;
-    [SerializeField] AudioClip deckShuffle;
-    [SerializeField] AudioClip cardDraw;
-    [SerializeField] AudioClip energyLoss;
-    [SerializeField] AudioClip launch;
-    [SerializeField] AudioClip fight;
-    [SerializeField] AudioClip defeat;
-    [SerializeField] AudioClip victory;
-    [SerializeField] AudioClip brutal;
-    [SerializeField] AudioClip doctorra;
-    [SerializeField] AudioClip gogirl;
-    [SerializeField] AudioClip bluecollar;
-    [SerializeField] AudioClip sinderella;
-    [SerializeField] AudioClip ko;
-    [SerializeField] AudioClip versus;
     private float delay = 0;
 
     #region Initialization
@@ -167,104 +147,6 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(uiToken);
     }
 
-    public void PlayCardDrag()
-    {
-        audioSource.PlayOneShot(cardDrag);
-    }
-
-    public void PlayDefenseCardPlay()
-    {
-        audioSource.PlayOneShot(cardDefensePlay);
-    }
-
-    public void PlayAbilityCardPlay()
-    {
-        audioSource.PlayOneShot(cardAbilityPlay);
-    }
-
-    public void PlayAttackCardPlay()
-    {
-        audioSource.PlayOneShot(cardAttackPlay);
-    }
-
-    public void PlayPassTurn()
-    {
-        audioSource.PlayOneShot(passTurn);
-    }
-
-    public void PlayDeckShuffle()
-    {
-        audioSource.PlayOneShot(deckShuffle);
-    }
-
-    public void PlayEnergyLoss()
-    {
-        audioSource.PlayOneShot(energyLoss);
-    }
-
-    public void PlayLaunch()
-    {
-        audioSource.PlayOneShot(launch);
-    }
-
-    public void PlayFight()
-    {
-        audioSource.PlayOneShot(fight);
-    }
-
-    public void PlayDefeat()
-    {
-        audioSource.PlayOneShot(defeat);
-    }
-
-    public void PlayVictory()
-    {
-        audioSource.PlayOneShot(victory);
-    }
-
-    public void PlayKO()
-    {
-        audioSource.PlayOneShot(ko);
-    }
-
-    public void PlayVersus()
-    {
-        audioSource.PlayOneShot(versus);
-    }
-
-    public void PlaySinderella()
-    {
-        audioSource.PlayOneShot(sinderella);
-    }
-
-    public void PlayDoctorRa()
-    {
-        audioSource.PlayOneShot(doctorra);
-    }
-
-    public void PlayGoGirl()
-    {
-        audioSource.PlayOneShot(gogirl);
-    }
-
-    public void PlayBlueCollar()
-    {
-        audioSource.PlayOneShot(bluecollar);
-    }
-
-    public void PlayBrutal()
-    {
-        audioSource.PlayOneShot(brutal);
-    }
-    public void PlayCardDraw()
-    {
-        if (delay > 0)
-        {
-            return;
-        }
-        delay = 0.1f;
-        audioSource.PlayOneShot(cardDraw);
-    }
     #endregion Public Methods
 
     #region Private Helpers

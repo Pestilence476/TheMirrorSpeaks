@@ -10,9 +10,9 @@ public class IntroMovie : MonoBehaviour
     {
         LogoAnimation,
         GameIntro,
-        GoldEnding,
-        CardboardEnding,
-        SilverEnding
+        GoodEnding,
+        BadEnding,
+        MehEnding
     }
 
     [Header("References")]
@@ -83,10 +83,9 @@ public class IntroMovie : MonoBehaviour
         string fileName = videoType switch
         {
             IntroVideoType.LogoAnimation => "LogoAnimation.mp4",
-            IntroVideoType.GameIntro => "IntroMovie.mp4",
-            IntroVideoType.GoldEnding => "Golden Crown.mp4",
-            IntroVideoType.CardboardEnding => "cardoard.mp4",
-            IntroVideoType.SilverEnding => "silver crown.mp4",
+            IntroVideoType.GoodEnding => "Golden Crown.mp4",
+            IntroVideoType.BadEnding => "cardoard.mp4",
+            IntroVideoType.MehEnding => "silver crown.mp4",
             _ => "LogoAnimation.mp4"
         };
 

@@ -46,12 +46,12 @@ public class MultipleEndings : MonoBehaviour
     {
         if (inventory != null)
         {
-            if (inventory.TotalCoin >= 24)
+            if (inventory.TotalGood >= 24)
             {
                 endState = 0;
                 SaveManager.Instance?.SaveGoodEnding();
             }
-            else if (inventory.TotalCoin >= 10)
+            else if (inventory.TotalGood >= 10)
             {
                 endState = 1;
             }
@@ -60,8 +60,9 @@ public class MultipleEndings : MonoBehaviour
                 endState = 2;
             }
         }
-
+        // Figure out how to get rid of this
         return inventory.Key > 0;
+        // ---------------------------------
     }
 
     private void EndingScene()
@@ -69,19 +70,19 @@ public class MultipleEndings : MonoBehaviour
         switch (endState)
         {
             case 2:
-                SceneManager.LoadScene("CardboardEnding");
+                SceneManager.LoadScene("BadEnding");
                 break;
 
             case 1:
-                SceneManager.LoadScene("SilverEnding");
+                SceneManager.LoadScene("MehEnding");
                 break;
 
             case 0:
-                SceneManager.LoadScene("GoldEnding");
+                SceneManager.LoadScene("GoodEnding");
                 break;
 
             default:
-                SceneManager.LoadScene("CardboardEnding");
+                SceneManager.LoadScene("BadEnding");
                 break;
         }
     }
