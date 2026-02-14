@@ -5782,7 +5782,7 @@ GameObject:
   - component: {fileID: 887703231}
   - component: {fileID: 887703233}
   - component: {fileID: 887703232}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LogoAnimationForeGroundFade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10656,7 +10656,7 @@ GameObject:
   - component: {fileID: 1810499342}
   - component: {fileID: 1810499341}
   - component: {fileID: 1810499345}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LogoAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
