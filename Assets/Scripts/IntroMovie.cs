@@ -12,7 +12,8 @@ public class IntroMovie : MonoBehaviour
         GameIntro,
         GoodEnding,
         BadEnding,
-        MehEnding
+        MehEnding,
+        Void
     }
 
     [Header("References")]
@@ -86,6 +87,7 @@ public class IntroMovie : MonoBehaviour
             IntroVideoType.GoodEnding => "Golden Crown.mp4",
             IntroVideoType.BadEnding => "cardoard.mp4",
             IntroVideoType.MehEnding => "silver crown.mp4",
+            IntroVideoType.Void => "VoidBackground.mp4",
             _ => "LogoAnimation.mp4"
         };
 
