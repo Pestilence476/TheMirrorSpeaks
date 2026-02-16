@@ -37,6 +37,7 @@ public class BrightnessSlider : MonoBehaviour
 
     private void OnBrightnessChange(float value)
     {
+        AudioManager.Instance.PlayType();
         UpdateBrightness(value);
         PlayerPrefs.SetFloat(BrightnessPrefKey, value);
         PlayerPrefs.Save();

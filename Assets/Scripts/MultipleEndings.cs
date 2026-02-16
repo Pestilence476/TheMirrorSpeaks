@@ -3,19 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MultipleEndings : MonoBehaviour
 {
-
-
-    //Update to new tags and stuff
-
-
-    bool isColliding = false;
-    bool isActive = true;
-    PlayerInventory inventory;
+    public PlayerInventory inventory;
     int endState = -1;
+    bool isActive = true;
 
-    private void Update()
+    public void EndGame()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isActive && isColliding)
+        if (isActive)
         {
             if (CheckInventory())
             {
@@ -23,35 +17,20 @@ public class MultipleEndings : MonoBehaviour
                 isActive = false;
             }
         }
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            isColliding = true;
-            inventory = collision.GetComponent<PlayerInventory>();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            isColliding = false;
-        }
-    }
 
     private bool CheckInventory()
     {
         if (inventory != null)
         {
-            if (inventory.TotalGood >= 24)
+            if (inventory.TotalGood >= 10)
             {
                 endState = 0;
                 SaveManager.Instance?.SaveGoodEnding();
             }
-            else if (inventory.TotalGood >= 10)
+            else if (inventory.TotalGood >= 5)
             {
                 endState = 1;
             }
@@ -61,7 +40,7 @@ public class MultipleEndings : MonoBehaviour
             }
         }
         // Figure out how to get rid of this
-        return inventory.Key > 0;
+        return inventory.Key == 0;
         // ---------------------------------
     }
 

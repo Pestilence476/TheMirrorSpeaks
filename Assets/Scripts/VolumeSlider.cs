@@ -45,7 +45,7 @@ public class VolumeSlider : MonoBehaviour
         if (!SafePrefs.HasKey(volumePrefString))
         {
             slider.value = 0.5f;
-            AudioManager.Instance.masterMixer.SetFloat(volumePrefString, Mathf.Log10(0.5f) * 20);
+            //AudioManager.Instance.masterMixer.SetFloat(volumePrefString, Mathf.Log10(0.5f) * 20);
             label.text = String.Format("{0}%", 50);
         }
         else
@@ -53,7 +53,7 @@ public class VolumeSlider : MonoBehaviour
             float volume = SafePrefs.GetFloat(volumePrefString);
             slider.value = volume;
             label.text = String.Format("{0}%", (int)(volume * 100));
-            AudioManager.Instance.masterMixer.SetFloat(volumePrefString, Mathf.Log10(volume) * 20);
+            //AudioManager.Instance.masterMixer.SetFloat(volumePrefString, Mathf.Log10(volume) * 20);
         }
 
         slider.onValueChanged.AddListener(OnVolumeChange);
