@@ -1,24 +1,29 @@
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class ChoicesScript : MonoBehaviour
 {
-    PlayerInventory inventory;
     public int GoodValue = 1;
+    public PlayerInventory inventory;
 
 
-    public void AddGood()
+    public void AddPoint()
     {
-        inventory.CurrentGood = inventory.CurrentGood + GoodValue;
-        inventory.TotalGood = inventory.TotalGood + GoodValue;
-        Debug.Log("GoodValue is now" + GoodValue);
+        if (inventory != null)
+        {
+            inventory.CurrentGood = inventory.CurrentGood + GoodValue;
+            inventory.TotalGood = inventory.TotalGood + GoodValue;
+            Debug.Log("GoodValue is now " + inventory.CurrentGood);
+        }
     }
 
-    public void MinusGood()
+    public void MinusPoint()
     {
-        inventory.CurrentGood = inventory.CurrentGood - GoodValue;
-        inventory.TotalGood = inventory.TotalGood - GoodValue;
-        Debug.Log("GoodValue is now" + GoodValue);
+        if (inventory != null)
+        {
+            inventory.CurrentGood = inventory.CurrentGood - GoodValue;
+            inventory.TotalGood = inventory.TotalGood - GoodValue;
+            Debug.Log("GoodValue is now " + inventory.CurrentGood);
+        }
     }
-
 }
