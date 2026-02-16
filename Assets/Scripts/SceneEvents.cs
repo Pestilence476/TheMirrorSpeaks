@@ -73,8 +73,16 @@ public class SceneEvents : MonoBehaviour
 
     IEnumerator EventTwo()
     {
-        nextButton.SetActive(false);
+        
+        yield return new WaitForSeconds(2);
+        textToSpeak = "Second time around still needs a script";
+        textbox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
         yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
         nextButton.SetActive(true);
         eventPos = 3;
     }
@@ -82,8 +90,16 @@ public class SceneEvents : MonoBehaviour
     IEnumerator EventThree()
     {
         nextButton.SetActive(false);
+        yield return new WaitForSeconds(2);
+        textToSpeak = "How about a different way of saying you have no script?";
+        textbox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
         yield return new WaitForSeconds(1);
-        nextButton.SetActive(true);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
+        options.SetActive(true);
         eventPos = 4;
     }
 

@@ -40,7 +40,7 @@ public class MultipleEndings : MonoBehaviour
             }
         }
         // Figure out how to get rid of this
-        return inventory.Key > 0;
+        return inventory.Key == 0;
         // ---------------------------------
     }
 

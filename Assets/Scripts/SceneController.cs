@@ -28,7 +28,7 @@ public class SceneController : MonoBehaviour
 
     IEnumerator LoadSpecificLevel(int index)
     {
-       transitionAnim.SetTrigger("End");
+        transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + index);
         while (!asyncLoad.isDone)

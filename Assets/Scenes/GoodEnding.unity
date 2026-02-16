@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53559cb2e3ef82c4ab303850816698f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VideoRenderer
-  videoPlayer: {fileID: 0}
+  videoPlayer: {fileID: 808576062}
 --- !u!114 &1598504735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169beeb41d53aac47927a39ec5d4b4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CinematicsEnd
-  continueBtn: {fileID: 0}
+  continueBtn: {fileID: 1734288845}
   delay: 15
 --- !u!114 &1598504736
 MonoBehaviour:
@@ -742,7 +742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1734288846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1166fb3f68fc77f43a116322536ea800, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3b753d7a6f88b9419ed0bc173561b26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
