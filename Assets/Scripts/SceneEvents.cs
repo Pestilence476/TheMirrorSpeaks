@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class SceneEvents : MonoBehaviour
 {
@@ -9,9 +10,20 @@ public class SceneEvents : MonoBehaviour
     public GameObject character;
     public GameObject mirror;
     public GameObject textbox;
+    public GameObject charname;
     public GameObject endScreen;
     public GameObject options;
+    public GameObject Lipstick;
+    public GameObject Mascara;
+    public GameObject Scissors;
+    public GameObject Syringe;
+    public GameObject Brush;
+    public GameObject Compact;
+    public GameObject Earrings;
+    public GameObject Necklace;
+    public GameObject Eyeliner;
     [SerializeField] string textToSpeak;
+    [SerializeField] string textToChar;
     [SerializeField] int currentTextLength;
     [SerializeField] int textLength;
     [SerializeField] GameObject mainTextObject;
@@ -37,10 +49,13 @@ public class SceneEvents : MonoBehaviour
         character.SetActive(true);
         yield return new WaitForSeconds(3);
         mainTextObject.SetActive(true);
-        textToSpeak = "Insert Text once the script has been completed.";
+        textToChar = "You";
+        textToSpeak = "Why can't I be like the girls online? They are so pretty but I am just a mess...";
+        charname.GetComponent<TMPro.TMP_Text>().text = textToChar;
         textbox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
+        TextCreator.runTextPrint2 = true;
         yield return new WaitForSeconds(0.05f);
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
@@ -57,41 +72,28 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitForSeconds(2);
         mirror.SetActive(true);
         yield return new WaitForSeconds(2);
-
-
-        textToSpeak = "Again insert the script later";
+        textToChar = "Mirror";
+        textToSpeak = "We can fix you... Just do what we say and you will be a celebrity.";
+        charname.GetComponent<TMPro.TMP_Text>().text = textToChar;
         textbox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTextLength);
-        yield return new WaitForSeconds(0.5f);
-        options.SetActive(true);
-        eventPos = 2;
-    }
-
-    IEnumerator EventTwo()
-    {
-        
-        yield return new WaitForSeconds(2);
-        textToSpeak = "Second time around still needs a script";
-        textbox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTextLength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
+        TextCreator.runTextPrint2 = true;
         yield return new WaitForSeconds(0.05f);
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
         nextButton.SetActive(true);
-        eventPos = 3;
+        eventPos = 2;
     }
 
-    IEnumerator EventThree()
+    IEnumerator EventTwo()
     {
         nextButton.SetActive(false);
         yield return new WaitForSeconds(2);
-        textToSpeak = "How about a different way of saying you have no script?";
+        textToChar = "Mirror";
+        textToSpeak = "Why don't you make your lips bigger... People will listen to you if you are pretty.";
+        charname.GetComponent<TMPro.TMP_Text>().text = textToChar;
         textbox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -99,6 +101,29 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
+        Lipstick.SetActive(false);
+        Syringe.SetActive(false);
+        options.SetActive(true);
+        eventPos = 3;
+    }
+
+    IEnumerator EventThree()
+    {
+        Lipstick.SetActive(true);
+        Syringe.SetActive(true);
+        yield return new WaitForSeconds(2);
+        textToChar = "Mirror";
+        textToSpeak = "No one likes messy hair...  CuT It OFf....";
+        charname.GetComponent<TMPro.TMP_Text>().text = textToChar;
+        textbox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
+        Scissors.SetActive(false);
+        Brush.SetActive(false);
         options.SetActive(true);
         eventPos = 4;
     }
