@@ -400,6 +400,8 @@ MonoBehaviour:
   inventory: {fileID: 89935989}
   changer1: {fileID: 1743983230}
   changer2: {fileID: 1165651660}
+  addcalled: 0
+  removecalled: 0
 --- !u!1 &286763552
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +682,7 @@ MonoBehaviour:
   nextButton: {fileID: 286763552}
   eventPos: 0
   endGame: {fileID: 1943530511}
+  choicesScript: {fileID: 167465130}
 --- !u!1 &482697968
 GameObject:
   m_ObjectHideFlags: 0
