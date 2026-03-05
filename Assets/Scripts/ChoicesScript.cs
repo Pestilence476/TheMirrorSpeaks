@@ -7,9 +7,12 @@ public class ChoicesScript : MonoBehaviour
     public PlayerInventory inventory;
     public SpriteChanger changer1;
     public SpriteChanger changer2;
+    public bool addcalled;
+    public bool removecalled;
 
     public void AddPoint()
     {
+        addcalled = true;
         if (inventory != null)
         {
             inventory.CurrentGood = inventory.CurrentGood + GoodValue;
@@ -25,6 +28,7 @@ public class ChoicesScript : MonoBehaviour
 
     public void MinusPoint()
     {
+        removecalled = true;
         if (inventory != null)
         {
             inventory.CurrentGood = inventory.CurrentGood - GoodValue;

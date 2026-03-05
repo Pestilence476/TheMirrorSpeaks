@@ -30,6 +30,7 @@ public class SceneEvents : MonoBehaviour
     [SerializeField] GameObject nextButton;
     [SerializeField] int eventPos = 0;
     public MultipleEndings endGame;
+    public ChoicesScript choicesScript;
 
     void Update()
     {
@@ -87,6 +88,7 @@ public class SceneEvents : MonoBehaviour
         eventPos = 2;
     }
 
+
     IEnumerator EventTwo()
     {
         nextButton.SetActive(false);
@@ -105,6 +107,28 @@ public class SceneEvents : MonoBehaviour
         Syringe.SetActive(false);
         options.SetActive(true);
         eventPos = 3;
+    }
+
+    IEnumerator EventOneGood()
+    {
+        nextButton.SetActive(false);
+        textbox.SetActive(true);
+        yield return new WaitForSeconds(2);
+        mirror.SetActive(true);
+        yield return new WaitForSeconds(2);
+        textToChar = "Mirror";
+        textToSpeak = "This is proof that it works";
+        charname.GetComponent<TMPro.TMP_Text>().text = textToChar;
+        textbox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+        TextCreator.runTextPrint2 = true;
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
+        nextButton.SetActive(true);
+        eventPos = 4;
     }
 
     IEnumerator EventThree()
@@ -172,12 +196,25 @@ public class SceneEvents : MonoBehaviour
         }
         if (eventPos == 2)
         {
-            StartCoroutine(EventTwo());
+            StartCoroutine(EventTwo()); 
         }
+
+
         if (eventPos == 3)
         {
-            StartCoroutine (EventThree());
+            if (choicesScript.removecalled == true)
+            {
+                StartCoroutine(EventThree());
+                choicesScript.removecalled = false;
+            }
+            if (choicesScript.addcalled == true)
+            {
+                StartCoroutine(EventOneGood());
+                choicesScript.addcalled = false;
+            }
         }
+
+
         if (eventPos == 4)
         {
             StartCoroutine(EventFour());
