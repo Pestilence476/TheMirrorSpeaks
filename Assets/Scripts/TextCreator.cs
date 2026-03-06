@@ -8,14 +8,23 @@ public class TextCreator : MonoBehaviour
     public static bool runTextPrint;
     public static bool runTextPrint2;
     public static int charCount;
+    public bool keyHasBeenPressed = false;
     [SerializeField] string transferText;
     [SerializeField] string transferText2;
     [SerializeField] int internalCount;
     public float speed = 0;
 
+    TextCreator textCreator;
+
     // Update is called once per frame
     void Update()
     {
+
+        //if (Input.anyKey)
+        //{
+        //    keyHasBeenPressed = true;
+        //}
+
         if (gameObject.name == "SpeakText")
         {
             internalCount = charCount;
@@ -55,11 +64,27 @@ public class TextCreator : MonoBehaviour
 
     IEnumerator RollText()
     {
-
-        foreach (char c in transferText)
+        if (keyHasBeenPressed == true)
         {
-            viewText.text += c;
-            yield return new WaitForSeconds(speed);
+            foreach (char c in transferText)
+            {
+                viewText.text += c;
+                yield return new WaitForSeconds(0);
+                keyHasBeenPressed = false;
+                Debug.Log("It is currently " + keyHasBeenPressed);
+                Debug.Log("Skipping");
+            }
+        }
+        else if (keyHasBeenPressed == false)
+        {
+            foreach (char c in transferText)
+            {
+                viewText.text += c;
+                yield return new WaitForSeconds(speed);
+                keyHasBeenPressed = false;
+                Debug.Log("It is currently " + keyHasBeenPressed);
+                Debug.Log("Typing");
+            }
         }
     }
 }
