@@ -55,20 +55,6 @@ public class ScreenModeDropdown : MonoBehaviour
 
         SafePrefs.GetInt(Constants.Prefs.screenModeKey, modeIndex); // On ACCEPT
 
-        //// Ask for confirmation
-        //PopupManager.Instance.CreateCountdownPopup(
-        //    error: "",
-        //    title: "Display settings changed",
-        //    primaryButtonText: "CONFIRM",
-        //    primaryCallback: () => {
-        //        SafePrefs.GetInt(Constants.Prefs.screenModeKey, modeIndex); // On ACCEPT
-        //    },
-        //    secondaryButtonText: "CANCEL",
-        //    secondaryCallback: () => {
-        //        Rollback(prevModeIndex); // On Rollback
-        //    },
-        //    message: "Accept changes?",
-        //    countdown: 10);
     }
 
     void Rollback(int prevModeIndex)

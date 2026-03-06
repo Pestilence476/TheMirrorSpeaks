@@ -20,10 +20,10 @@ public class TextCreator : MonoBehaviour
     void Update()
     {
 
-        //if (Input.anyKey)
-        //{
-        //    keyHasBeenPressed = true;
-        //}
+        if (Input.GetKeyDown("space"))
+        {
+            speed = -5000;
+        }
 
         if (gameObject.name == "SpeakText")
         {
@@ -64,27 +64,18 @@ public class TextCreator : MonoBehaviour
 
     IEnumerator RollText()
     {
-        if (keyHasBeenPressed == true)
+        foreach (char c in transferText)
         {
-            foreach (char c in transferText)
-            {
-                viewText.text += c;
-                yield return new WaitForSeconds(0);
-                keyHasBeenPressed = false;
-                Debug.Log("It is currently " + keyHasBeenPressed);
-                Debug.Log("Skipping");
-            }
+            viewText.text += c;
+            yield return new WaitForSeconds(speed);
+            keyHasBeenPressed = false;
         }
-        else if (keyHasBeenPressed == false)
-        {
-            foreach (char c in transferText)
-            {
-                viewText.text += c;
-                yield return new WaitForSeconds(speed);
-                keyHasBeenPressed = false;
-                Debug.Log("It is currently " + keyHasBeenPressed);
-                Debug.Log("Typing");
-            }
-        }
+        speed = 0.03f;
+    }
+
+    public void ChangeTextSpeed()
+    {
+        //ADD CODE TO CHANGE SPEED BASED ON OPTION
+        Debug.Log("Word is " );
     }
 }
