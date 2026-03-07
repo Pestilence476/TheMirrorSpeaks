@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,13 +8,11 @@ using UnityEngine.UI;
 
 public class TextSpeedDropdown : MonoBehaviour
 {
-    public Text textbox;
-
-    
+    public TMP_Text textbox;
 
     void Start()
     {
-        var dropdown = transform.GetComponent<Dropdown>();
+        var dropdown = transform.GetComponent<TMP_Dropdown>();
 
         dropdown.options.Clear();
 
@@ -26,7 +25,7 @@ public class TextSpeedDropdown : MonoBehaviour
         // Fill dropdown with items
         foreach(var item in items)
         {
-            dropdown.options.Add(new Dropdown.OptionData() { text = item });
+            dropdown.options.Add(new TMP_Dropdown.OptionData() { text = item });
         }
 
         DropdownItemSelected(dropdown);
@@ -34,10 +33,11 @@ public class TextSpeedDropdown : MonoBehaviour
         dropdown.onValueChanged.AddListener(delegate { DropdownItemSelected(dropdown); });
     }
 
-    void DropdownItemSelected(Dropdown dropdown)
+
+
+    public void DropdownItemSelected(TMP_Dropdown dropdown)
     {
         int index = dropdown.value;
         textbox.text = dropdown.options[index].text;
     }
-
 }

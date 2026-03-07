@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,9 +13,20 @@ public class TextCreator : MonoBehaviour
     [SerializeField] string transferText;
     [SerializeField] string transferText2;
     [SerializeField] int internalCount;
-    public float speed = 0;
+    public float speed;
 
-    TextCreator textCreator;
+
+    TextSpeedDropdown dropdown;
+
+
+
+    private void Start()
+    {
+        dropdown = FindFirstObjectByType<TextSpeedDropdown>();
+        speed = 0.03f;
+        
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -70,12 +82,29 @@ public class TextCreator : MonoBehaviour
             yield return new WaitForSeconds(speed);
             keyHasBeenPressed = false;
         }
-        speed = 0.03f;
+        ChangeTextSpeed();
     }
 
     public void ChangeTextSpeed()
     {
-        //ADD CODE TO CHANGE SPEED BASED ON OPTION
-        Debug.Log("Word is " );
+        // Check which option is selected
+        if (dropdown.textbox.text == "Normal")
+        {
+            Debug.Log("Normal speed selected");
+            speed = 0.03f;
+            PlayerPrefs.SetFloat("Speed", speed);
+        }
+        if (dropdown.textbox.text == "Medium")
+        {
+            Debug.Log("Medium speed selected");
+            speed = 50f;
+            PlayerPrefs.SetFloat("Speed", speed);
+        }
+        if (dropdown.textbox.text == "Fast")
+        {
+            Debug.Log("Fast speed selected");
+            speed = 500f;
+            PlayerPrefs.SetFloat("Speed", speed);
+        }
     }
 }
