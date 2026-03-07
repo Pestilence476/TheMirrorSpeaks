@@ -10,6 +10,7 @@ public class TextSpeedDropdown : MonoBehaviour
 {
     public TMP_Text textbox;
     public static TextSpeedDropdown Instance;
+    
 
     void Start()
     {
