@@ -49,15 +49,15 @@ public class TextSpeedDropdown : MonoBehaviour
     {
         if (textbox.text == "Normal")
         {
-            GameData.SetTextSpeed(0.03f);
+            GameData.SetTextSpeed(0.05f);
         }
         if (textbox.text == "Medium")
         {
-            GameData.SetTextSpeed(-50f);
+            GameData.SetTextSpeed(0.03f);
         }
         if (textbox.text == "Fast")
         {
-            GameData.SetTextSpeed(-500f);
+            GameData.SetTextSpeed(-5f);
         }
     }
 }
