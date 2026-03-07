@@ -16,6 +16,7 @@ public class TextCreator : MonoBehaviour
     public float speed;
 
 
+
     TextSpeedDropdown dropdown;
 
 
@@ -23,8 +24,7 @@ public class TextCreator : MonoBehaviour
     private void Start()
     {
         dropdown = FindFirstObjectByType<TextSpeedDropdown>();
-        speed = 0.03f;
-        
+        speed = GameData.GetTextSpeed();
     }
 
 
@@ -82,29 +82,5 @@ public class TextCreator : MonoBehaviour
             yield return new WaitForSeconds(speed);
             keyHasBeenPressed = false;
         }
-        ChangeTextSpeed();
-    }
-
-    public void ChangeTextSpeed()
-    {
-        // Check which option is selected
-        if (dropdown.textbox.text == "Normal")
-        {
-            Debug.Log("Normal speed selected");
-            speed = 0.03f;
-            PlayerPrefs.SetFloat("Speed", speed);
-        }
-        if (dropdown.textbox.text == "Medium")
-        {
-            Debug.Log("Medium speed selected");
-            speed = 50f;
-            PlayerPrefs.SetFloat("Speed", speed);
-        }
-        if (dropdown.textbox.text == "Fast")
-        {
-            Debug.Log("Fast speed selected");
-            speed = 500f;
-            PlayerPrefs.SetFloat("Speed", speed);
-        }
-    }
+    } 
 }
