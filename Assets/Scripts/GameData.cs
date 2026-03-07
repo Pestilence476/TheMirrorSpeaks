@@ -4,7 +4,7 @@ using System.Collections;
 [System.Serializable]
 public class GameData
 {
-    public float textSpeed;
+    public float textSpeed = 0.03f;
 
     private static GameData _instance;
     private const string KEY = "GameData";
