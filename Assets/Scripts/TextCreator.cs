@@ -13,9 +13,6 @@ public class TextCreator : MonoBehaviour
     [SerializeField] string transferText2;
     [SerializeField] int internalCount;
     public float speed;
-    public float oldnumber;
-
-
     TextSpeedDropdown dropdown;
 
 
@@ -24,14 +21,13 @@ public class TextCreator : MonoBehaviour
     {
         dropdown = FindFirstObjectByType<TextSpeedDropdown>();
         speed = GameData.GetTextSpeed();
-        oldnumber = speed;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
         if (gameObject.name == "SpeakText")
         {
@@ -43,10 +39,9 @@ public class TextCreator : MonoBehaviour
                 viewText = GetComponent<TMPro.TMP_Text>();
                 transferText = viewText.text;
                 viewText.text = "";
-                StartCoroutine(RollText()); 
-                
+                StartCoroutine(RollText());
+
             }
-            GameData.SetTextSpeed(oldnumber);
         }
         if (gameObject.name == "CharName")
         {
@@ -59,13 +54,40 @@ public class TextCreator : MonoBehaviour
                 StartCoroutine(PlaceText());
             }
         }
+
+
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            speed = -5000;
+        }
+
+        if (speed == -5000)
+        {
+            StartCoroutine(ReturnSpeed());
+        }
+        
     }
-    IEnumerator SkipText()
+
+    IEnumerator ReturnSpeed()
     {
-        GameData.SetTextSpeed(-5000);
-        Debug.Log("SPACEEEE");
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(0.5f);
+        if (GameData.option == 1)
+        {
+            speed = 0.05f;
+        }
+        if (GameData.option == 2)
+        {
+            speed = 0.03f;
+        }
+        if (GameData.option == 3)
+        {
+            speed = -5f;
+        }
+
     }
+    
 
     IEnumerator PlaceText()
     {

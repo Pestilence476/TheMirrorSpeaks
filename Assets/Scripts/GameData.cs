@@ -4,10 +4,17 @@ using System.Collections;
 [System.Serializable]
 public class GameData
 {
-    public float textSpeed = 0.03f;
+    public float textSpeed = 0.05f;
+    public static int option = 1;
 
     private static GameData _instance;
     private const string KEY = "GameData";
+
+
+    void Start()
+    {
+        option = 1;
+    }
 
     private static GameData Instance
     {
@@ -19,12 +26,30 @@ public class GameData
         }
     }
 
+    public static void SaveOption()
+    {
+        if (GetTextSpeed() == 0.05f)
+        {
+            option = 1;
+        }
+        if (GetTextSpeed() == 0.03f)
+        {
+            option = 2;
+        }
+        if (GetTextSpeed() == -5f)
+        {
+            option = 3;
+        }
+    }
+
+
     public static float GetTextSpeed() => Instance.textSpeed;
 
     public static void SetTextSpeed(float value)
     {
         Instance.textSpeed = value;
         Save();
+        SaveOption();
     }
 
     private static void Save()
