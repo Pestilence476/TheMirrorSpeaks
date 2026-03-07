@@ -9,9 +9,11 @@ using UnityEngine.UI;
 public class TextSpeedDropdown : MonoBehaviour
 {
     public TMP_Text textbox;
+    public static TextSpeedDropdown Instance;
 
     void Start()
     {
+        
         var dropdown = transform.GetComponent<TMP_Dropdown>();
 
         dropdown.options.Clear();
@@ -39,5 +41,22 @@ public class TextSpeedDropdown : MonoBehaviour
     {
         int index = dropdown.value;
         textbox.text = dropdown.options[index].text;
+        UpdateTextSpeed();
+    }
+
+    public void UpdateTextSpeed()
+    {
+        if (textbox.text == "Normal")
+        {
+            GameData.SetTextSpeed(0.03f);
+        }
+        if (textbox.text == "Medium")
+        {
+            GameData.SetTextSpeed(-50f);
+        }
+        if (textbox.text == "Fast")
+        {
+            GameData.SetTextSpeed(-500f);
+        }
     }
 }
