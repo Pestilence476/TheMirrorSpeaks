@@ -84,9 +84,10 @@ public class IntroMovie : MonoBehaviour
         string fileName = videoType switch
         {
             IntroVideoType.LogoAnimation => "LogoAnimation.mp4",
-            IntroVideoType.GoodEnding => "Golden Crown.mp4",
-            IntroVideoType.BadEnding => "cardoard.mp4",
-            IntroVideoType.MehEnding => "silver crown.mp4",
+            IntroVideoType.GameIntro => "Warning.mp4",
+            IntroVideoType.GoodEnding => "Good End.mp4",
+            IntroVideoType.BadEnding => "Meh End.mp4",
+            IntroVideoType.MehEnding => "Bad End.mp4",
             IntroVideoType.Void => "VoidBackground.mp4",
             _ => "LogoAnimation.mp4"
         };

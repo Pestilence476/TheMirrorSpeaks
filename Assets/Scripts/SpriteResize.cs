@@ -63,8 +63,8 @@ public class SpriteResize : MonoBehaviour
             }
             if (gameObject.name == "Option 2")
             {
-                rectTransform.sizeDelta = new Vector2(170, rectTransform.sizeDelta.y);
-                rectTransform.sizeDelta = new Vector2(40, rectTransform.sizeDelta.x);
+                rectTransform.sizeDelta = new Vector2(300, rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(230, rectTransform.sizeDelta.x);
             }
         }
 
@@ -73,13 +73,13 @@ public class SpriteResize : MonoBehaviour
         {
             if (gameObject.name == "Option 1")
             {
-                rectTransform.sizeDelta = new Vector2(170, rectTransform.sizeDelta.y);
-                rectTransform.sizeDelta = new Vector2(40, rectTransform.sizeDelta.x);
+                rectTransform.sizeDelta = new Vector2(40, rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(80, rectTransform.sizeDelta.x);
             }
             if (gameObject.name == "Option 2")
             {
-                rectTransform.sizeDelta = new Vector2(170, rectTransform.sizeDelta.y);
-                rectTransform.sizeDelta = new Vector2(40, rectTransform.sizeDelta.x);
+                rectTransform.sizeDelta = new Vector2(300, rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(320, rectTransform.sizeDelta.x);
             }
         }
 
@@ -88,13 +88,13 @@ public class SpriteResize : MonoBehaviour
         {
             if (gameObject.name == "Option 1")
             {
-                rectTransform.sizeDelta = new Vector2(170, rectTransform.sizeDelta.y);
-                rectTransform.sizeDelta = new Vector2(40, rectTransform.sizeDelta.x);
+                rectTransform.sizeDelta = new Vector2(270, rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(80, rectTransform.sizeDelta.x);
             }
             if (gameObject.name == "Option 2")
             {
-                rectTransform.sizeDelta = new Vector2(170, rectTransform.sizeDelta.y);
-                rectTransform.sizeDelta = new Vector2(40, rectTransform.sizeDelta.x);
+                rectTransform.sizeDelta = new Vector2(65, rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(95, rectTransform.sizeDelta.x);
             }
         }
 
@@ -103,13 +103,13 @@ public class SpriteResize : MonoBehaviour
         {
             if (gameObject.name == "Option 1")
             {
-                rectTransform.sizeDelta = new Vector2(170, rectTransform.sizeDelta.y);
-                rectTransform.sizeDelta = new Vector2(40, rectTransform.sizeDelta.x);
+                rectTransform.sizeDelta = new Vector2(140, rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(140, rectTransform.sizeDelta.x);
             }
             if (gameObject.name == "Option 2")
             {
-                rectTransform.sizeDelta = new Vector2(170, rectTransform.sizeDelta.y);
-                rectTransform.sizeDelta = new Vector2(40, rectTransform.sizeDelta.x);
+                rectTransform.sizeDelta = new Vector2(470, rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(470, rectTransform.sizeDelta.x);
             }
         }
 
