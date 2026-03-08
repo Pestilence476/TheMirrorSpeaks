@@ -13,16 +13,20 @@ public class SceneEvents : MonoBehaviour
     public GameObject charname;
     public GameObject endScreen;
     public GameObject options;
+
     public GameObject Lipstick;
     public GameObject Mascara;
     public GameObject Scissors;
     public GameObject Syringe;
     public GameObject Brush;
-    public GameObject Compact;
     public GameObject Earrings;
     public GameObject Necklace;
     public GameObject Eyeliner;
     public GameObject Lashes;
+    public GameObject Scalpel;
+    public GameObject Noose;
+    public GameObject Eyecolor;
+
     [SerializeField] string textToSpeak;
     [SerializeField] string textToChar;
     [SerializeField] int currentTextLength;
@@ -104,6 +108,7 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
 
+        yield return new WaitForSeconds(1);
         nextButton.SetActive(true);
         eventPos = 1;
 
@@ -141,6 +146,7 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
 
+        yield return new WaitForSeconds(1);
         nextButton.SetActive(true);
         eventPos = 2;
     }
@@ -228,6 +234,7 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
 
+        yield return new WaitForSeconds(1);
         nextButton.SetActive(true);
         eventPos = 4;
     }
@@ -311,6 +318,7 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(2f);
 
+        yield return new WaitForSeconds(1);
         nextButton.SetActive(true);
         eventPos = 4;
     }
@@ -353,6 +361,7 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
 
+        yield return new WaitForSeconds(1);
         nextButton.SetActive(true);
         eventPos = 5;
     }
@@ -555,10 +564,10 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitUntil(() => textLength == currentTextLength);
         yield return new WaitForSeconds(0.5f);
 
+        yield return new WaitForSeconds(1);
         nextButton.SetActive(true);
         eventPos = 8;
     }
-
 
 
     //CHOICE EVENT
@@ -598,7 +607,7 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         mainTextObject.SetActive(false); // Turn off entire text box
-        Eyeliner.SetActive(false);
+        Mascara.SetActive(false);
         Lashes.SetActive(false);
         options.SetActive(true);
         eventPos = 9;
@@ -607,7 +616,7 @@ public class SceneEvents : MonoBehaviour
     //RESPONSE EVENT
     IEnumerator EventNine()
     {
-        Eyeliner.SetActive(true); // Turn on item
+        Mascara.SetActive(true); // Turn on item
         Lashes.SetActive(true); // Turn on item
         yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true); // Turn on entire text box
@@ -660,7 +669,7 @@ public class SceneEvents : MonoBehaviour
     //RESPONSE EVENT
     IEnumerator EventNineGood()
     {
-        Eyeliner.SetActive(true); // Turn on item
+        Mascara.SetActive(true); // Turn on item
         Lashes.SetActive(true); // Turn on item
         yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true); // Turn on entire text box
@@ -711,29 +720,6 @@ public class SceneEvents : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
-
-
-    //All choice and response events need updated code for turning the game object on and off
-
-
-
-
-
-
-
-
-
-
-
-
-
     //CHOICE EVENT
     IEnumerator EventTen()
     {
@@ -772,8 +758,8 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         mainTextObject.SetActive(false); // Turn off entire text box
-        Scissors.SetActive(false);
-        Brush.SetActive(false);
+        Scalpel.SetActive(false);
+        Earrings.SetActive(false);
         options.SetActive(true);
         eventPos = 11;
     }
@@ -783,8 +769,8 @@ public class SceneEvents : MonoBehaviour
     //RESPONSE EVENT
     IEnumerator EventEleven()
     {
-        Scissors.SetActive(true); // Turn on item
-        Brush.SetActive(true); // Turn on item
+        Scalpel.SetActive(true); // Turn on item
+        Earrings.SetActive(true); // Turn on item
         yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true); // Turn on entire text box
 
@@ -836,8 +822,8 @@ public class SceneEvents : MonoBehaviour
     //RESPONSE EVENT
     IEnumerator EventElevenGood()
     {
-        Scissors.SetActive(true); // Turn on item
-        Brush.SetActive(true); // Turn on item
+        Scalpel.SetActive(true); // Turn on item
+        Earrings.SetActive(true); // Turn on item
         yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true); // Turn on entire text box
 
@@ -924,8 +910,8 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         mainTextObject.SetActive(false); // Turn off entire text box
-        Scissors.SetActive(false);
-        Brush.SetActive(false);
+        Eyecolor.SetActive(false); // Turn off item
+        Eyeliner.SetActive(false); // Turn off item
         options.SetActive(true);
         eventPos = 13;
     }
@@ -934,8 +920,8 @@ public class SceneEvents : MonoBehaviour
     //RESPONSE EVENT
     IEnumerator EventThirteen()
     {
-        Scissors.SetActive(true); // Turn on item
-        Brush.SetActive(true); // Turn on item
+        Eyecolor.SetActive(true); // Turn on item
+        Eyeliner.SetActive(true); // Turn on item
         yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true); // Turn on entire text box
 
@@ -988,8 +974,8 @@ public class SceneEvents : MonoBehaviour
     //RESPONSE EVENT
     IEnumerator EventThirteenGood()
     {
-        Scissors.SetActive(true); // Turn on item
-        Brush.SetActive(true); // Turn on item
+        Eyecolor.SetActive(true); // Turn on item
+        Eyeliner.SetActive(true); // Turn on item
         yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true); // Turn on entire text box
 
@@ -1096,8 +1082,7 @@ public class SceneEvents : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         mainTextObject.SetActive(false); // Turn off entire text box
-        Scissors.SetActive(false);
-        Brush.SetActive(false);
+        Necklace.SetActive(false);
         options.SetActive(true);
         eventPos = 15;
     }
@@ -1105,8 +1090,7 @@ public class SceneEvents : MonoBehaviour
     //RESPONSE EVENT
     IEnumerator EventFifteen()
     {
-        Scissors.SetActive(true); // Turn on item
-        Brush.SetActive(true); // Turn on item
+        Necklace.SetActive(true); // Turn on item
         yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true); // Turn on entire text box
 
@@ -1168,8 +1152,7 @@ public class SceneEvents : MonoBehaviour
     //RESPONSE EVENT
     IEnumerator EventFifteenGood()
     {
-        Scissors.SetActive(true); // Turn on item
-        Brush.SetActive(true); // Turn on item
+        Necklace.SetActive(true); // Turn on item
         yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true); // Turn on entire text box
 
@@ -1438,11 +1421,11 @@ public class SceneEvents : MonoBehaviour
 
         if (eventPos == 7)
         {
-            StartCoroutine(EventSix());
+            StartCoroutine(EventSeven());
         }
         if (eventPos == 8)
         {
-            StartCoroutine(EventSix());
+            StartCoroutine(EventEight());
         }
 
 
@@ -1463,7 +1446,7 @@ public class SceneEvents : MonoBehaviour
 
         if (eventPos == 10)
         {
-            StartCoroutine(EventSix());
+            StartCoroutine(EventTen());
         }
 
 
@@ -1484,7 +1467,7 @@ public class SceneEvents : MonoBehaviour
 
         if (eventPos == 12)
         {
-            StartCoroutine(EventSix());
+            StartCoroutine(EventTwelve());
         }
 
 
@@ -1505,7 +1488,7 @@ public class SceneEvents : MonoBehaviour
 
         if (eventPos == 14)
         {
-            StartCoroutine(EventSix());
+            StartCoroutine(EventFourteen());
         }
 
 
